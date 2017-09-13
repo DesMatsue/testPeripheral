@@ -13,7 +13,7 @@
         <!--Status-->
         <scene sceneID="KIv-F5-zWA">
             <objects>
-                <viewController id="buf-Ay-JH1" sceneMemberID="viewController">
+                <viewController id="buf-Ay-JH1" customClass="StatusController" customModule="testPeripheral" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KT3-k4-24B"/>
                         <viewControllerLayoutGuide type="bottom" id="MXC-l0-Emt"/>
@@ -69,31 +69,29 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="ide-uZ-QdN">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="ide-uZ-QdN">
                                 <rect key="frame" x="374" y="70" width="94" height="29"/>
+                                <connections>
+                                    <action selector="stepperDidTap:" destination="buf-Ay-JH1" eventType="valueChanged" id="fiZ-X3-Xjv"/>
+                                </connections>
                             </stepper>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="WzD-Pa-QHr">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minimumValue="15" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="WzD-Pa-QHr">
                                 <rect key="frame" x="374" y="121" width="94" height="29"/>
+                                <connections>
+                                    <action selector="stepperDidTap2:" destination="buf-Ay-JH1" eventType="valueChanged" id="Ffk-AY-gk3"/>
+                                </connections>
                             </stepper>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2K-Z4-JBz">
-                                <rect key="frame" x="622" y="301" width="34" height="30"/>
-                                <state key="normal" title="Start"/>
+                                <rect key="frame" x="419" y="301" width="49" height="30"/>
+                                <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="submitAdvertise:" destination="buf-Ay-JH1" eventType="touchUpInside" id="gFh-xH-EF4"/>
+                                </connections>
                             </button>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X4r-RM-eFV">
-                                <rect key="frame" x="397" y="233" width="51" height="31"/>
-                            </switch>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1K8-gW-is8">
-                                <rect key="frame" x="294" y="223" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="5Xj-g4-nss"/>
-                                    <constraint firstAttribute="height" constant="50" id="6r4-aM-tho"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wWd-jN-Qgn" firstAttribute="top" secondItem="KT3-k4-24B" secondAttribute="bottom" constant="50" id="0vn-o7-Gxu"/>
-                            <constraint firstItem="X4r-RM-eFV" firstAttribute="centerX" secondItem="WzD-Pa-QHr" secondAttribute="centerX" id="2uz-UZ-yPg"/>
                             <constraint firstItem="wWd-jN-Qgn" firstAttribute="leading" secondItem="h4f-8u-tCo" secondAttribute="leadingMargin" constant="100" id="3nu-1a-lB8"/>
                             <constraint firstItem="j8R-3f-YmK" firstAttribute="top" secondItem="MjD-6B-MgE" secondAttribute="bottom" constant="30" id="75Y-lF-gNv"/>
                             <constraint firstItem="ide-uZ-QdN" firstAttribute="leading" secondItem="wtI-gg-Ghd" secondAttribute="trailing" constant="30" id="AnL-Ui-hcB"/>
@@ -104,21 +102,22 @@
                             <constraint firstItem="RTG-nk-Dm0" firstAttribute="top" secondItem="j8R-3f-YmK" secondAttribute="top" id="J3o-AI-Q8Y"/>
                             <constraint firstItem="q25-XG-dUX" firstAttribute="leading" secondItem="wtI-gg-Ghd" secondAttribute="leading" id="KsS-pN-KXU"/>
                             <constraint firstItem="j8R-3f-YmK" firstAttribute="leading" secondItem="wWd-jN-Qgn" secondAttribute="leading" id="RzJ-k1-eif"/>
+                            <constraint firstItem="MXC-l0-Emt" firstAttribute="top" secondItem="Y2K-Z4-JBz" secondAttribute="bottom" constant="34" id="Tvt-8v-fWD"/>
                             <constraint firstItem="WzD-Pa-QHr" firstAttribute="leading" secondItem="q25-XG-dUX" secondAttribute="trailing" constant="30" id="Yg3-hR-tTv"/>
                             <constraint firstItem="MjD-6B-MgE" firstAttribute="leading" secondItem="wWd-jN-Qgn" secondAttribute="leading" id="Znp-FO-bEm"/>
-                            <constraint firstItem="MXC-l0-Emt" firstAttribute="top" secondItem="Y2K-Z4-JBz" secondAttribute="bottom" constant="34" id="b02-R5-3Mt"/>
-                            <constraint firstItem="X4r-RM-eFV" firstAttribute="centerY" secondItem="1K8-gW-is8" secondAttribute="centerY" id="cFK-Pv-nhx"/>
                             <constraint firstItem="ide-uZ-QdN" firstAttribute="top" secondItem="wWd-jN-Qgn" secondAttribute="top" id="ccW-Y7-qSS"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Y2K-Z4-JBz" secondAttribute="trailing" constant="60" id="gEf-le-1He"/>
-                            <constraint firstItem="1K8-gW-is8" firstAttribute="top" secondItem="RTG-nk-Dm0" secondAttribute="bottom" constant="30" id="gaN-u5-1Vn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Y2K-Z4-JBz" secondAttribute="trailing" constant="248" id="eoO-nR-e46"/>
                             <constraint firstItem="q25-XG-dUX" firstAttribute="top" secondItem="MjD-6B-MgE" secondAttribute="top" id="hq2-w5-9HG"/>
                             <constraint firstItem="RTG-nk-Dm0" firstAttribute="leading" secondItem="q25-XG-dUX" secondAttribute="leading" id="i90-ld-QXf"/>
-                            <constraint firstItem="1K8-gW-is8" firstAttribute="trailing" secondItem="RTG-nk-Dm0" secondAttribute="trailing" id="sUJ-Zp-G8m"/>
                             <constraint firstItem="wtI-gg-Ghd" firstAttribute="leading" secondItem="wWd-jN-Qgn" secondAttribute="trailing" constant="90" id="vRz-ld-QHC"/>
-                            <constraint firstItem="X4r-RM-eFV" firstAttribute="leading" secondItem="1K8-gW-is8" secondAttribute="trailing" constant="52.5" id="yU9-8Z-iUv"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Status" id="0wj-be-LM2"/>
+                    <connections>
+                        <outlet property="dataIntervalUnit" destination="q25-XG-dUX" id="PjM-tS-5xG"/>
+                        <outlet property="dataUnitText" destination="wtI-gg-Ghd" id="uFA-tW-pfy"/>
+                        <outlet property="speedText" destination="RTG-nk-Dm0" id="X36-HQ-fri"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QK6-of-YJ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

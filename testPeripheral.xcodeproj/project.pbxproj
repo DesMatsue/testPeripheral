@@ -15,6 +15,7 @@
 		EB0A82211F6211BF0029BF01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB0A821F1F6211BF0029BF01 /* LaunchScreen.storyboard */; };
 		EB0A822C1F6211BF0029BF01 /* testPeripheralTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0A822B1F6211BF0029BF01 /* testPeripheralTests.swift */; };
 		EB0A82371F6211BF0029BF01 /* testPeripheralUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0A82361F6211BF0029BF01 /* testPeripheralUITests.swift */; };
+		EB2056BA1F66241400C68B8D /* StatusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2056B91F66241400C68B8D /* StatusController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		EB0A82321F6211BF0029BF01 /* testPeripheralUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testPeripheralUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB0A82361F6211BF0029BF01 /* testPeripheralUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testPeripheralUITests.swift; sourceTree = "<group>"; };
 		EB0A82381F6211BF0029BF01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB2056B91F66241400C68B8D /* StatusController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusController.swift; sourceTree = "<group>"; };
 		F0F425C9B98A6A352B589FBA /* Pods_testPeripheral.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_testPeripheral.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -121,8 +123,8 @@
 		EB0A82151F6211BF0029BF01 /* testPeripheral */ = {
 			isa = PBXGroup;
 			children = (
+				EB2056B81F6623DB00C68B8D /* controller */,
 				EB0A82161F6211BF0029BF01 /* AppDelegate.swift */,
-				EB0A82181F6211BF0029BF01 /* ViewController.swift */,
 				EB0A821A1F6211BF0029BF01 /* Main.storyboard */,
 				EB0A821D1F6211BF0029BF01 /* Assets.xcassets */,
 				EB0A821F1F6211BF0029BF01 /* LaunchScreen.storyboard */,
@@ -147,6 +149,15 @@
 				EB0A82381F6211BF0029BF01 /* Info.plist */,
 			);
 			path = testPeripheralUITests;
+			sourceTree = "<group>";
+		};
+		EB2056B81F6623DB00C68B8D /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				EB0A82181F6211BF0029BF01 /* ViewController.swift */,
+				EB2056B91F66241400C68B8D /* StatusController.swift */,
+			);
+			name = controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB0A82191F6211BF0029BF01 /* ViewController.swift in Sources */,
+				EB2056BA1F66241400C68B8D /* StatusController.swift in Sources */,
 				EB0A82171F6211BF0029BF01 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -495,6 +507,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jp.DeltaKogyo.DesMatsue.testPeripheral;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -508,6 +521,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jp.DeltaKogyo.DesMatsue.testPeripheral;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -584,6 +598,7 @@
 				EB0A823D1F6211BF0029BF01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EB0A823E1F6211BF0029BF01 /* Build configuration list for PBXNativeTarget "testPeripheralTests" */ = {
 			isa = XCConfigurationList;
@@ -592,6 +607,7 @@
 				EB0A82401F6211BF0029BF01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EB0A82411F6211BF0029BF01 /* Build configuration list for PBXNativeTarget "testPeripheralUITests" */ = {
 			isa = XCConfigurationList;
@@ -600,6 +616,7 @@
 				EB0A82431F6211BF0029BF01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
