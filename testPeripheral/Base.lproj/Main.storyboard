@@ -88,10 +88,17 @@
                                     <action selector="submitAdvertise:" destination="buf-Ay-JH1" eventType="touchUpInside" id="gFh-xH-EF4"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Advertisement" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AtX-zK-kOD">
+                                <rect key="frame" x="487.99999999999994" y="305" width="111.66666666666657" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wWd-jN-Qgn" firstAttribute="top" secondItem="KT3-k4-24B" secondAttribute="bottom" constant="50" id="0vn-o7-Gxu"/>
+                            <constraint firstItem="AtX-zK-kOD" firstAttribute="leading" secondItem="Y2K-Z4-JBz" secondAttribute="trailing" constant="20" id="1OG-ey-Tuv"/>
                             <constraint firstItem="wWd-jN-Qgn" firstAttribute="leading" secondItem="h4f-8u-tCo" secondAttribute="leadingMargin" constant="100" id="3nu-1a-lB8"/>
                             <constraint firstItem="j8R-3f-YmK" firstAttribute="top" secondItem="MjD-6B-MgE" secondAttribute="bottom" constant="30" id="75Y-lF-gNv"/>
                             <constraint firstItem="ide-uZ-QdN" firstAttribute="leading" secondItem="wtI-gg-Ghd" secondAttribute="trailing" constant="30" id="AnL-Ui-hcB"/>
@@ -102,6 +109,7 @@
                             <constraint firstItem="RTG-nk-Dm0" firstAttribute="top" secondItem="j8R-3f-YmK" secondAttribute="top" id="J3o-AI-Q8Y"/>
                             <constraint firstItem="q25-XG-dUX" firstAttribute="leading" secondItem="wtI-gg-Ghd" secondAttribute="leading" id="KsS-pN-KXU"/>
                             <constraint firstItem="j8R-3f-YmK" firstAttribute="leading" secondItem="wWd-jN-Qgn" secondAttribute="leading" id="RzJ-k1-eif"/>
+                            <constraint firstItem="MXC-l0-Emt" firstAttribute="top" secondItem="AtX-zK-kOD" secondAttribute="bottom" constant="39" id="Sjd-Jt-9Um"/>
                             <constraint firstItem="MXC-l0-Emt" firstAttribute="top" secondItem="Y2K-Z4-JBz" secondAttribute="bottom" constant="34" id="Tvt-8v-fWD"/>
                             <constraint firstItem="WzD-Pa-QHr" firstAttribute="leading" secondItem="q25-XG-dUX" secondAttribute="trailing" constant="30" id="Yg3-hR-tTv"/>
                             <constraint firstItem="MjD-6B-MgE" firstAttribute="leading" secondItem="wWd-jN-Qgn" secondAttribute="leading" id="Znp-FO-bEm"/>
@@ -114,6 +122,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Status" id="0wj-be-LM2"/>
                     <connections>
+                        <outlet property="buttonSubmit" destination="Y2K-Z4-JBz" id="XwI-wO-y3z"/>
                         <outlet property="dataIntervalUnit" destination="q25-XG-dUX" id="PjM-tS-5xG"/>
                         <outlet property="dataUnitText" destination="wtI-gg-Ghd" id="uFA-tW-pfy"/>
                         <outlet property="speedText" destination="RTG-nk-Dm0" id="X36-HQ-fri"/>

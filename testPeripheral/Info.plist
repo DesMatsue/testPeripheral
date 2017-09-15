@@ -26,6 +26,8 @@
 	<string></string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>Bluetoothを使用します</string>
 	<key>NSHumanReadableCopyright</key>
 	<string></string>
 	<key>UIBackgroundModes</key>
