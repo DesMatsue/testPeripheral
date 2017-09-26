@@ -43,7 +43,7 @@ class StatusController: UIViewController,CBPeripheralManagerDelegate,UITextField
             print("\(error)")
             return
         }
-        print("")
+        print("アドバタイズ成功")
     }
     // invoked when remote central subscribes advertisement
     // * 引数を変えていないことが気になる
@@ -72,8 +72,16 @@ class StatusController: UIViewController,CBPeripheralManagerDelegate,UITextField
             value: submitData, permissions: CBAttributePermissions.readable)
         service.characteristics = [charasteristic]
         self.peripheralManager.add(service)
-        
+
     }
+    func peripheralManager(_ peripheral: CBPeripheralManager, didAdd service: CBService, error: Error?) {
+        if error != nil {
+            print("サービス追加失敗 : \(error!)")
+            return
+        }
+        print("サービス追加成功")
+    }
+    
     
     /*
      * private methods
@@ -98,6 +106,28 @@ class StatusController: UIViewController,CBPeripheralManagerDelegate,UITextField
         if !isSending {
             peripheralManager.stopAdvertising()
         }else{
+            var arr:[UInt8] = []
+            let serviceUUID = CBUUID(string: "5736A771-18DA-4DD6-8011-9AF47D6B7C20")
+            let service = CBMutableService(type: serviceUUID, primary: true)
+            guard let interval: Int = Int(Double(dataIntervalUnit.text!)!),
+                let data: UInt8 = UInt8(Double(dataUnitText.text!)!)
+                else {
+                    // illegal input
+                    buttonSubmit.setTitle("Submit", for: UIControlState.normal)
+                    return
+            }
+            // byte配列を作成
+            var int = interval
+            for _ in 1...data {
+                arr.append(data)
+            }
+            let submitData = Data(bytes:arr)
+            let charastericUUID = CBUUID(string: "9F392B50-34E2-453F-AE24-238FFE4CDEB5")
+            let charasteristic = CBMutableCharacteristic(
+                type: charastericUUID, properties: CBCharacteristicProperties.read,
+                value: submitData, permissions: CBAttributePermissions.readable)
+            service.characteristics = [charasteristic]
+            self.peripheralManager.add(service)
             let advertisementData = [CBAdvertisementDataLocalNameKey: "Test Device"]
             peripheralManager.startAdvertising(advertisementData)
         }
